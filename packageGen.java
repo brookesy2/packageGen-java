@@ -6,6 +6,7 @@ import java.util.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -36,8 +37,9 @@ class packageGen {
             try {
                 Files.walkFileTree(startingDir, pf);
             } catch (Exception e) {
-                System.out.println("An error has occured while scanning the directory: " + e);
+                System.out.println("An error has occurred while scanning the directory: " + e);
             }
+
             try {
                 generateXML();
             } catch (Exception e) {
@@ -84,6 +86,11 @@ class packageGen {
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new File("package.xml"));
             transformer.transform(source, result);
