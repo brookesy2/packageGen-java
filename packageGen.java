@@ -1,7 +1,6 @@
 import java.io.File;
 import java.nio.file.*;
 import java.io.IOException;
-import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
 
@@ -15,12 +14,12 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class packageGen {
+class packageGen {
 
-    static Map <String, ArrayList<String>> fileDirectory = new HashMap<>();
-    static Set<String> suffixes = packageHelper.suffixHelper();
-    static Set<String> directoryNames = packageHelper.directoryNameHelper();
-    static Map<String, String> directoryMapping = packageHelper.directoryMappingHelper();
+    private static Map <String, ArrayList<String>> fileDirectory = new HashMap<>();
+    private static Set<String> suffixes = packageHelper.suffixHelper();
+    private static Set<String> directoryNames = packageHelper.directoryNameHelper();
+    private static Map<String, String> directoryMapping = packageHelper.directoryMappingHelper();
 
     public static void main(String[] args) {
 
@@ -96,7 +95,7 @@ public class packageGen {
         }
     }
 
-    public static class PrintFiles extends SimpleFileVisitor<Path> {
+    private static class PrintFiles extends SimpleFileVisitor<Path> {
 
         // Print information about
         // each type of file.

@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 //Helper class for packageGen. Contains Suffixes, Directories and Mappings
 //This is not a complete list as the org did not have all features turned on
-public class packageHelper {
+class packageHelper {
 
     public static Set<String> suffixHelper() {
         Set<String> suffixes;
