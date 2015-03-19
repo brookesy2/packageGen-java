@@ -31,6 +31,7 @@ class packageHelper {
                 "quickAction",
                 "flexipage",
                 "tab",
+                "customApplicationComponent",
                 "app",
                 "letter",
                 "email",
@@ -44,7 +45,6 @@ class packageHelper {
                 "homePageComponent",
                 "homePageLayout",
                 "objectTranslation",
-                "translation",
                 "cls",
                 "trigger",
                 "profile",
@@ -63,9 +63,13 @@ class packageHelper {
                 "sharingRules",
                 "community",
                 "callCenter",
+                "entitlementProcess",
+                "milestoneType",
+                "entitlementTemplate",
                 "connectedApp",
                 "network",
                 "samlssoconfig",
+                "synonymDictionary",
                 "settings").collect(Collectors.toSet());
 
         return suffixes;
@@ -94,6 +98,7 @@ class packageHelper {
                 "quickActions",
                 "flexipages",
                 "tabs",
+                "customApplicationComponents",
                 "applications",
                 "letterhead",
                 "email",
@@ -107,7 +112,6 @@ class packageHelper {
                 "homePageComponents",
                 "homePageLayouts",
                 "objectTranslations",
-                "translations",
                 "classes",
                 "triggers",
                 "profiles",
@@ -126,9 +130,13 @@ class packageHelper {
                 "userSharingRules",
                 "communities",
                 "callCenters",
+                "entitlementProcesses",
+                "milestoneTypes",
+                "entitlementTemplates",
                 "connectedApps",
                 "networks",
                 "samlssoconfigs",
+                "synonymDictionaries",
                 "settings").collect(Collectors.toSet());
 
         return directoryNames;
@@ -158,6 +166,7 @@ class packageHelper {
         directoryMapping.put("quickActions", "QuickAction");
         directoryMapping.put("flexipages", "FlexiPage");
         directoryMapping.put("tabs", "CustomTab");
+        directoryMapping.put("customApplicationComponents", "CustomApplicationComponent");
         directoryMapping.put("applications", "CustomApplication");
         directoryMapping.put("letterhead", "Letterhead");
         directoryMapping.put("email", "EmailTemplate");
@@ -171,7 +180,6 @@ class packageHelper {
         directoryMapping.put("homePageComponents", "HomePageComponent");
         directoryMapping.put("homePageLayouts", "HomePageLayout");
         directoryMapping.put("objectTranslations", "CustomObjectTranslation");
-        directoryMapping.put("translations", "Translations");
         directoryMapping.put("classes", "ApexClass");
         directoryMapping.put("triggers", "ApexTrigger");
         directoryMapping.put("profiles", "Profile");
@@ -190,9 +198,13 @@ class packageHelper {
         directoryMapping.put("userSharingRules", "UserSharingRules");
         directoryMapping.put("communities", "Community");
         directoryMapping.put("callCenters", "CallCenter");
+        directoryMapping.put("entitlementProcesses", "EntitlementProcess");
+        directoryMapping.put("milestoneTypes", "MilestoneType");
+        directoryMapping.put("entitlementTemplates", "EntitlementTemplate");
         directoryMapping.put("connectedApps", "ConnectedApp");
         directoryMapping.put("networks", "Network");
         directoryMapping.put("samlssoconfigs", "SamlSsoConfig");
+        directoryMapping.put("synonymDictionaries", "SynonymDictionary");
         directoryMapping.put("settings", "Settings");
 
         return directoryMapping;
